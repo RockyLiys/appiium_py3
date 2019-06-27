@@ -11,7 +11,7 @@
 """
 from utils.read_excel import create
 from utils.log import LOG,logger
-from  utils.make_case import makecasefile
+from  utils.make_case import make_case_files
 from multiprocessing import Pool
 from  cases.reg_case_test import Regtest
 from  utils.Parmeris import Parmer
@@ -73,7 +73,7 @@ if __name__=="__main__":
     start_time = datetime.datetime.now()
     devices = AndroidDebugBridge().attached_devices()
     LOG.info(devices)
-    # makecasefile('reg','reg','reg') #没有的时候才会生成，一般都会有这个文件   暂时关掉
+    # make_case_files('reg','reg','reg') #没有的时候才会生成，一般都会有这个文件   暂时关掉
     if len(devices) > 0:
         for dev in devices:
             app = {
